@@ -4,7 +4,14 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 
-const contactInfo = [
+type ContactItem = {
+  icon: typeof Phone;
+  label: string;
+  lines?: string[];
+  email?: string;
+};
+
+const contactInfo: ContactItem[] = [
   {
     icon: Phone,
     label: "Call Us",
@@ -20,7 +27,8 @@ const contactInfo = [
     label: "Visit",
     lines: ["Blantyre, Chirimba Road", "Opposite Mlombwa CCAP"],
   },
-] as const;
+];
+
 
 const cardVariants = {
   hidden: { opacity: 0, y: 16 },
